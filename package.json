@@ -1,0 +1,28 @@
+{
+  "name": "psychic-meme",
+  "version": "1.0.0",
+  "description": "A BPN Implementation for Emotion Recognition",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/identor/psychic-meme.git"
+  },
+  "keywords": [
+    "neaural-network",
+    "bpn",
+    "facial",
+    "facial-recognition"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/identor/psychic-meme/issues"
+  },
+  "homepage": "https://github.com/identor/psychic-meme#readme"
+}
