@@ -1,0 +1,14 @@
+<md-toolbar layout="row" layout-align="center center">
+  <div class="md-toolbar-tools">
+    <h1>Psychic Meme v1.0.0</h1>
+  </div>
+  <span flex></span>
+  <md-menu>
+    <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)"><md-icon>more_vert<md-icon></md-button>
+    <md-menu-content>
+      <md-menu-item>
+        <md-button ng-click="vm.$state.go('login')"><md-icon>exit_to_app</md-icon>Logout</md-button>
+      </md-menu-item>
+    </md-menu-content>
+  </md-menu>
+</md-toolbar>

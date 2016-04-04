@@ -1,0 +1,40 @@
+<mp-toolbar></mp-toolbar>
+<div class="wrapper" layout="row" layout-fill ng-hide="vm.loading">
+  <mp-nav class="md-whiteframe-z2"></mp-nav>
+  <md-content layout-padding flex>
+    <div layout="row" layout-align="start center">
+      <h1 class="md-title">Training Data</h1>
+      <span flex></span>
+      <md-button class="md-raised md-primary">Train<md-icon>refresh</md-icon></md-button>
+    </div>
+    <div layout="row">
+      <md-list flex>
+        <h2 class="md-body-2">Happy</h2>
+        <md-list-item ng-repeat="obj in vm.trainingData | filter:{ emotion: 'happy' }" ng-click="noop()" class="noright" ng-cloak>
+          <img alt="{{ obj.index }}" ng-src="{{ obj.img }}" class="md-avatar" />
+          <p>{{ obj.index }}</p>
+        </md-list-item>
+      </md-list>
+      <md-list flex>
+        <h2 class="md-body-2">Sad</h2>
+        <md-list-item ng-repeat="obj in vm.trainingData | filter:{ emotion: 'sad' }" ng-click="noop()" class="noright" ng-cloak>
+          <img alt="{{ obj.index }}" ng-src="{{ obj.img }}" class="md-avatar" />
+          <p>{{ obj.index }}</p>
+        </md-list-item>
+      </md-list>
+      <md-list flex>
+        <h2 class="md-body-2">Normal</h2>
+        <md-list-item ng-repeat="obj in vm.trainingData | filter:{ emotion: 'normal' }" ng-click="noop()" class="noright" ng-cloak>
+          <img alt="{{ obj.index }}" ng-src="{{ obj.img }}" class="md-avatar" />
+          <p>{{ obj.index }}</p>
+        </md-list-item>
+      </md-list>
+    </div>
+  </md-content>
+</div>
+<div class="wrapper" layout-padding layout-fill ng-show="vm.loading">
+  <pre>Loading</pre>
+</div>
+<md-button class="md-fab md-fab-bottom-right" ng-click="vm.createTrainingData($event)">
+  <md-icon>add</md-icon>
+</md-button>

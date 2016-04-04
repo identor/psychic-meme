@@ -1,0 +1,43 @@
+<md-dialog aria-label="Training Data Dialog" ng-cloak>
+  <form  ng-submit="vm.submit()">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2 class="md-title">Training Data Dialog</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="vm.cancel()">
+          <md-icon>close</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <div layout="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Image Index</label>
+            <input ng-model="vm.obj.imgIndex">
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Emotion</label>
+            <md-select ng-model="vm.obj.emotion">
+              <md-option ng-repeat="obj in vm.emotionOutputs" value="{{ obj }}">
+                {{ obj.toUpperCase() }}
+              </md-option>
+            </md-select>
+          </md-input-container>
+        </div>
+        <section layout="column">
+        </section>
+      </div>
+      <md-list-item ng-click="noop()" class="noright" ng-cloak>
+        <img alt="{{ vm.obj.imgIndex }}" ng-src="{{ './assets/images/data-set-' + vm.obj.imgIndex + '.jpg' }}" class="md-avatar">
+        <p>{{ vm.obj.imgIndex }}</p>
+      </md-list-item>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button type="submit">
+        Submit
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
+

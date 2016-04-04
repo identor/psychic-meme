@@ -1,0 +1,11 @@
+<mp-toolbar></mp-toolbar>
+<div class="wrapper" layout="row" layout-fill ng-hide="vm.loading">
+  <mp-nav class="md-whiteframe-z2"></mp-nav>
+  <md-content layout-padding flex>
+    <h1 class="md-title">You are using Spot CRM v1.0.0!!</h1>
+  </md-content>
+</div>
+<div class="wrapper" layout-padding layout-fill ng-show="vm.loading">
+  <pre>Loading</pre>
+</div>
+

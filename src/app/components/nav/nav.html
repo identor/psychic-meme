@@ -1,0 +1,17 @@
+<md-sidenav md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" class="md-sidenav-left">
+  <md-subheader>Modules</md-subheader>
+  <md-list>
+    <md-list-item class="md-1-line" ng-click="vm.$state.go('data-set')">
+      <md-icon>tv</md-icon>
+      <p>Data Set</p>
+    </md-list-item>
+    <md-list-item class="md-1-line" ng-click="vm.$state.go('training')">
+      <md-icon>view_module</md-icon>
+      <p>Training</p>
+    </md-list-item>
+    <md-list-item class="md-1-line" ng-click="vm.$state.go('accounts')">
+      <md-icon>play_arrow</md-icon>
+      <p>Run</p>
+    </md-list-item>
+  </md-list>
+</md-sidenav>
