@@ -34,13 +34,28 @@ export class PsychicMemeTraining {
         });
       }, () => {
         let finalTrainingData = inputs.map((input, index) => {
+          // normalize data set to 4544
+          let trimInput = input => {
+            return input.slice(0, 4544);
+          };
+
           return {
-            input: input,
+            input: trimInput(input),
             output: outputs[index]
           };
         })
-        console.log(finalTrainingData[0].input, finalTrainingData[0].output);
-        console.log(this.net.train(finalTrainingData));
+        console.log(finalTrainingData[0].input.length, finalTrainingData[0].output);
+        console.log(finalTrainingData[1].input.length, finalTrainingData[0].output);
+        console.log(finalTrainingData[2].input.length, finalTrainingData[0].output);
+        console.log(finalTrainingData[3].input.length, finalTrainingData[0].output);
+        console.log(finalTrainingData[4].input.length, finalTrainingData[0].output);
+        console.log(this.net.train(finalTrainingData, {
+          errorThresh: 0.005,
+          iterations: 20000,
+          log: true,
+          logPeriod: 10,
+          learningRate: 0.3
+        }));
       });
     });
   }
@@ -84,5 +99,5 @@ function getBlob(imgUrl, callback) {
     callback(blob);
   };
 
-  oReq.send(); 
+  oReq.send();
 }
